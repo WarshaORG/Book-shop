@@ -1,11 +1,11 @@
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 var session = require('express-session');
 
 var handlers = require('./handlers.js')
-var Book = require('./models/book');
+//var Book = require('./models/book');
 
 //middleware
 app.use(express.static(__dirname + '/client'));
@@ -17,6 +17,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/bookstore');
 var db = mongoose.connection;
 
 
+app.get('/api/orders',handlers.handelOrder.showorder);
+app.post('/api/orders',handlers.handelOrder.addorder);  
 
 app.get('/api/books',handlers.handelBook.showbook);
 app.post('/api/books',handlers.handelBook.addbook);

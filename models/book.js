@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 // Book Schema to add it to mongo data bease
-const bookSchema = mongoose.Schema({
+var bookSchema = mongoose.Schema({
 	title:{
 		type: String,
 		required: true,
@@ -36,7 +36,7 @@ const bookSchema = mongoose.Schema({
 	}
 });
 
-const Book = module.exports = mongoose.model('Book', bookSchema);
+var Book = module.exports = mongoose.model('Book', bookSchema);
 
 // Get Books from mongo data base
 module.exports.getBooks = (callback) => {
