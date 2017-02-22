@@ -1,5 +1,6 @@
 var Book = require('./models/book.js');
 var User = require('./models/userModel.js');
+var Order = require('./models/order.js');
 var jwt = require('jwt-simple');
 
 
@@ -101,3 +102,52 @@ module.exports.handelBook = {
 	}
 
 }
+
+module.exports.handelOrder = {
+  // get order from data base
+  showorder: function(req, res)  {
+    Order.getOrders(function(err, orders)  {
+      if(err){
+        throw err;
+      }
+      res.json(orders);
+    });
+  },
+
+  // add order to data base
+  addorder : function(req, res)  {
+    var order = req.body;
+    Order.addOrder(order,function (err, order) {
+      if(err){
+        throw err;
+      }
+      res.json(order);
+    });
+  }
+
+}
+
+
+// module.exports.handelOrder = {
+//   // get Orders from data base
+//   showorder: function(req, res)  {
+//     Order.getOorder(function(err, orders)  {
+//       if(err){
+//         throw err;
+//       }
+//       res.json(orders);
+//     });
+//   },
+
+//   // add Order to data base
+//   addorder : function(req, res)  {
+//     var order = req.body.text;
+//     Order.addOorder(order,function (err, order) {
+//       if(err){
+//         throw err;
+//       }
+//       res.json(order);
+//     });
+//   }
+
+// }

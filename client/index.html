@@ -8,25 +8,31 @@
 	<link rel="stylesheet" type="text/css" href="style/bootstrap/css/bootstrap.min.css"/>
 	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 </head>
-<body ng-app='books' >
+<body ng-app='books'>
 	<!-- <div class="container"></div> -->
-	<div id="custom-bootstrap-menu"  class="navbar navbar-default " role="navigation"  >
+	<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
 		<div class="container">
 			<div class="navbar-header"><a class="navbar-brand" href="#">Bookstore </a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
 			</div>
-				<ul class="nav navbar-nav navbar-left" >
+			<div class="collapse navbar-collapse navbar-menubuilder">
+				<ul class="nav navbar-nav navbar-left">
 					<li checked><a href="#/main">Home</a>
 					</li>
 					<li><a href="#/aboutus">About Us</a>
 					</li>
 					<li><a href="#/books">Library</a>
 					</li>
-					
-					<li ng-show="!loggedIN" class="signin" ><a href="#/signin">SignIn</a>
+					<li><a href="#/orders">Orders</a>
 					</li>
-					<li  class="signup"><a href="#/signup" >Sign Up</a>
+					<li><a href="#/books/add2">books</a>
 					</li>
-					<li ng-show="!loggedIN" class="signout"><a href="#/signout" >sign out</a>
+					<li><a href="#/signin">SignIn</a>
+					</li>
+					<li><a href="#/signup">Sign Up</a>
+					</li>
+					<li><a href="#/signout">sign out</a>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
@@ -36,7 +42,6 @@
 
 			</div>
 		</div>
-	</div>
 	</div>
 	<ng-view></ng-view>
 	<style>
@@ -53,15 +58,13 @@
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
 	<!-- Latest compiled JavaScript -->
 	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-	<!-- <script type="text/javascript">
-	
-	</script> -->
 
 	<script src="style/bootstrap/js/bootstrap.min.js"></script>
 	<script src="lib/jquery.js"></script>
 	<script src="lib/angular/angular.js"></script>
 	<script src="lib/angular-route/angular-route.js"></script>
 	<script src="app/account/books.js"></script>
+	<script src="app/account/Order.js"></script>
 	<script src="app/account/auth.js"></script>
 	<script src="app/main/main.js"></script>
 	<script src="app/services.js"></script>
