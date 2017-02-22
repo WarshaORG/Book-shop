@@ -28,7 +28,7 @@ angular.module('book.Order1' , [])
     Order.showorder($scope.order).then(function(data) {
       console.log(data)
     $scope.order = data;
-    // $scope.$apply()
+    $scope.apply()
   });
   }
 //$scope.showorder();

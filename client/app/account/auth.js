@@ -15,7 +15,9 @@ angular.module('book.auth', [])
         console.log(data)
         $window.localStorage.setItem('com.book', data.token);
         $window.localStorage.setItem('user.book', $scope.user.username);
-        
+      /////////////////////////duaaa////////////////
+        $window.localStorage['isLogin'] = true;
+        /////////////////////duaa////////////////
         if(data.user.type){
           $window.localStorage.setItem('user.type', data.user.type);  
         }
@@ -64,6 +66,17 @@ angular.module('book.auth', [])
     }
   }
 }
+
+// $scope.islogin = function () {
+//       if($window.localStorage['token']){
+//         $window.islogin = true;
+//       }else{
+//         $window.islogin = false;
+//       }
+
+//       console.log($window.islogin)
+//     }
+
 
 $scope.signout = function(){
   Auth.signout();
