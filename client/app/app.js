@@ -6,9 +6,12 @@ angular.module('books',
   'addbook',
   'ngRoute'
 	])
+
+
+
 .config(function($routeProvider, $httpProvider){
   $routeProvider
-	.when('/signup', {
+  .when('/signup', {
       templateUrl: 'app/account/signup.html',
       controller: 'AuthController'
     })
@@ -20,7 +23,7 @@ angular.module('books',
       templateUrl: 'app/account/signout.html',
       controller: 'AuthController'
     })
-	.when('/', {
+  .when('/', {
       templateUrl: 'app/main/main.html',
       controller: 'MainController'
     })
@@ -36,5 +39,7 @@ angular.module('books',
     templateUrl:'app/account/aboutus.html',
     controller:'BookController'
   })
+ 
     .otherwise({redirectTo:'/'});
 })
+

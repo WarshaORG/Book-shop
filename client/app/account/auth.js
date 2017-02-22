@@ -1,7 +1,8 @@
 angular.module('book.auth', [])
 
 .controller('AuthController', function ($scope , $window , $location , Auth) {
-  $scope.user = {};
+      $scope.loggedIN= false
+    $scope.user = {};
      if($window.localStorage.getItem("com.book")) {
         $location.path('/');
       } 
@@ -9,15 +10,14 @@ angular.module('book.auth', [])
   $scope.signin = function () {
     var passFlag = $scope.user.password;
     var userFlag = $scope.user.username;
+
+    
     if(userFlag && passFlag){
       Auth.signin($scope.user)
       .then(function (data) {
         console.log(data)
         $window.localStorage.setItem('com.book', data.token);
         $window.localStorage.setItem('user.book', $scope.user.username);
-      /////////////////////////duaaa////////////////
-        $window.localStorage['isLogin'] = true;
-        /////////////////////duaa////////////////
         if(data.user.type){
           $window.localStorage.setItem('user.type', data.user.type);  
         }
@@ -25,6 +25,12 @@ angular.module('book.auth', [])
          if(data.user.type === 'admin'){
              $location.path('/books/add');
          }else {
+          /////////////////////////////add toggle///////////////////
+          $scope.toggle = function() {
+            $scope.loggedIN = !$scope.loggedIN;
+          };
+          $scope.toggle();
+          ////////////////////////////add toggle///////////////////
               $location.path('/');
          }
       })
@@ -67,20 +73,19 @@ angular.module('book.auth', [])
   }
 }
 
-// $scope.islogin = function () {
-//       if($window.localStorage['token']){
-//         $window.islogin = true;
-//       }else{
-//         $window.islogin = false;
-//       }
 
-//       console.log($window.islogin)
-//     }
 
 
 $scope.signout = function(){
   Auth.signout();
 }
 
-
+/////////////////////////ng-show/hide ////////////////////////////////////////////////
+// $scope.islogin = function () {
+//     if($window.localStorage['token']){
+//       $window.islogin = true;
+//     }else{
+//       $window.islogin = false;
+//     }
+// }
 });
