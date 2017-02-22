@@ -1,0 +1,16 @@
+<div ng-init="showorder()">
+  <div>
+  	<form >
+  		<TEXTAREA type ="text" ng-model="order.text"></TEXTAREA>
+  		<button ng-click="addorder()">SUBMIT</button>
+  	</form>
+  </div>
+
+  <ul ng-repeat="ord in order.data">
+    
+    <li>{{ord.text}}</li>
+
+  </ul>
+ 
+</div>
+<!-- ng-controller="OrderController" -->
