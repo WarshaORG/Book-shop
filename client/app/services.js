@@ -30,6 +30,7 @@ angular.module('book.services', [])
 
 })
 
+
 .factory('Auth', function ($http, $location, $window) {
   var signin = function (user) {
     return $http({
@@ -65,4 +66,62 @@ angular.module('book.services', [])
     signup: signup,
     signout:signout
   };
-});
+})
+
+.factory('Order', function ($http) {
+  var showorder = function () {
+    return $http({
+      method: 'GET',
+      url: '/api/orders'
+    })
+    .then(function (res) {
+      return res;
+    });
+  };
+
+  // "post" add order
+  var addorder = function (order) {
+    return $http({
+      method: 'POST',
+      url: '/api/orders',
+      data: order 
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+  return {
+    showorder: showorder,
+    addorder: addorder
+  };
+})
+
+
+
+// .factory('book2', function ($http) {
+//   var showbook2 = function () {
+//     return $http({
+//       method: 'GET',
+//       url: '/api/books2'
+//     })
+//     .then(function (res) {
+//       return res.data;
+//     });
+//   };
+
+//   // "post" add book
+//   var addbook2 = function (book) {
+//     return $http({
+//       method: 'POST',
+//       url: '/api/books2',
+//       data: book 
+//     }).then(function (res) {
+//       return res;
+//     });
+//   };
+
+//   return {
+//     showbook: showbook,
+//     addbook: addbook
+//   };
+
+// })
