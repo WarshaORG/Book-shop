@@ -2,6 +2,8 @@
 angular.module('books',
   ['book.auth',
   'book.main',
+  'ngMap',
+  'book.map',
   'book.services',
   'addbook',
   'book.Order1',
