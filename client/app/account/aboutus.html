@@ -1,17 +1,17 @@
 <div class="container">
 <div class="row" style="text-align: center">
-	<div class="col-md-2"></div>
-	<div class="col-md-8">
-		<h1 style="text-align: center;">About Us</h1> 
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <h1 style="text-align: center;">About Us</h1> 
 
   We are a growing Amman-based company and we start
   with build this library App , this library display many books and allow to user to get information related to every book.
   we look to make series of updates to our App to enhance the
   content and the style and to add more options including on site reading and free downloading .
   
-	</div>
-	<div class="col-md-2"></div>
-	
+  </div>
+  <div class="col-md-2"></div>
+  
 
  
 </div>
@@ -21,14 +21,27 @@
     font-family: -webkit-pictograph;
     color: brown;">Amman-jordan King hussein business park</p><hr>
 <div class="row" style="text-align: center;">
-	<img src="app/main/img/about.jpg" class="img-circle" height="207px">
-	<hr>
+  <img src="app/main/img/about.jpg" class="img-circle" height="207px">
+  <hr>
 
  <p>
       any one can give help to develope this App , so please
     
-     feel free to contact us via our Email: ammanshopbooks@gmail.com	
+     feel free to contact us via our Email: ammanshopbooks@gmail.com  
 
  </p>
+</div>
+</div>
+
+<div id="map" style="width:800px; margin:0 auto;">
+<div map-lazy-load="https://maps.google.com/maps/api/js?key=AIzaSyCbzxz8MTo6G_tIkvrgqf3dfyFoqpshIwA&callback=initMap"
+  map-lazy-load-params="{{googleMapsUrl}}">
+  <ng-map id="map-canvas" center="31.970,35.832" zoom="15">
+  <marker position="31.970,35.832"
+          on-click="vm.toggleBounce()"
+          animation="DROP"
+          ></marker>
+    <marker id="pos" position="31.972254, 35.8319246" icon="rbk.png">
+    </marker>
 </div>
 </div>
