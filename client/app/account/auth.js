@@ -1,7 +1,7 @@
 angular.module('book.auth', [])
 
 .controller('AuthController', function ($scope , $window , $location , Auth) {
-      $scope.loggedIN= false
+      // $scope.loggedIN= false
     $scope.user = {};
      if($window.localStorage.getItem("com.book")) {
         $location.path('/');
@@ -25,12 +25,6 @@ angular.module('book.auth', [])
          if(data.user.type === 'admin'){
              $location.path('/books/add');
          }else {
-          /////////////////////////////add toggle///////////////////
-          $scope.toggle = function() {
-            $scope.loggedIN = !$scope.loggedIN;
-          };
-          $scope.toggle();
-          ////////////////////////////add toggle///////////////////
               $location.path('/');
          }
       })
