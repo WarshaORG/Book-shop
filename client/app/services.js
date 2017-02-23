@@ -59,15 +59,12 @@ angular.module('book.services', [])
     $window.localStorage.clear();
      $location.path('/signin');  
   };
-
-
-
-
   return {
     signin: signin,
     signup: signup,
     signout : signout
   };
+
 })
 
 .factory('Order', function ($http) {
@@ -98,32 +95,3 @@ angular.module('book.services', [])
 })
 
 
-
-// .factory('book2', function ($http) {
-//   var showbook2 = function () {
-//     return $http({
-//       method: 'GET',
-//       url: '/api/books2'
-//     })
-//     .then(function (res) {
-//       return res.data;
-//     });
-//   };
-
-//   // "post" add book
-//   var addbook2 = function (book) {
-//     return $http({
-//       method: 'POST',
-//       url: '/api/books2',
-//       data: book 
-//     }).then(function (res) {
-//       return res;
-//     });
-//   };
-
-//   return {
-//     showbook: showbook,
-//     addbook: addbook
-//   };
-
-// })

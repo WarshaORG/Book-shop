@@ -26,6 +26,5 @@ angular.module('addbook' , [])
 		  $scope.book = data;
 	  });
   }
-
 });
 
