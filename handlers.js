@@ -3,9 +3,9 @@ var User = require('./models/userModel.js');
 var Order = require('./models/order.js');
 var jwt = require('jwt-simple');
 
-
-// check for user in data base
+////////////////////////////////////////////controller user //////////////////////////////
 module.exports.handleUsers = {
+// check for user in data base
   signin : function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
@@ -75,10 +75,9 @@ module.exports.handleUsers = {
       }
     });
   }
-
 }
 
-
+//////////////////////////controller book /////////////////////////////
 module.exports.handelBook = {
   // get book from data base
 	showbook: function(req, res)  {
@@ -102,7 +101,7 @@ module.exports.handelBook = {
 	}
 
 }
-
+////////////////////////////////////////controller order///////////////////////////
 module.exports.handelOrder = {
   // get order from data base
   showorder: function(req, res)  {
@@ -126,28 +125,3 @@ module.exports.handelOrder = {
   }
 
 }
-
-
-// module.exports.handelOrder = {
-//   // get Orders from data base
-//   showorder: function(req, res)  {
-//     Order.getOorder(function(err, orders)  {
-//       if(err){
-//         throw err;
-//       }
-//       res.json(orders);
-//     });
-//   },
-
-//   // add Order to data base
-//   addorder : function(req, res)  {
-//     var order = req.body.text;
-//     Order.addOorder(order,function (err, order) {
-//       if(err){
-//         throw err;
-//       }
-//       res.json(order);
-//     });
-//   }
-
-// }
