@@ -7,7 +7,7 @@ var bookSchema = mongoose.Schema({
 		required: true,
 		unique: true
 	},
-	genre:{
+	category:{
 		type: String,
 		required: true
 	},
