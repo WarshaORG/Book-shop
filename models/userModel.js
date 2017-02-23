@@ -15,12 +15,22 @@ var UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  userType:String,
-  phone:String,
-  address:String,
-  emailAddress:String,
-  salt: String
-  
+  userType:{
+    type: String
+  },
+  phone:{
+    type: String
+  },
+  address:{
+    type: String
+  },
+  emailAddress:{
+    type: String
+  },
+  salt: {
+    type: String
+  }
+
 });
 
 UserSchema.methods.comparePasswords = function (candidatePassword) {
@@ -43,7 +53,6 @@ UserSchema.pre('save', function (next) {
   if (!user.isModified('password')) {
     return next();
   }
-
   // generate a salt
   bcrypt.genSalt(SALT_WORK_FACTOR, function (err, salt) {
     if (err) {

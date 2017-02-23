@@ -10,11 +10,11 @@ Book-story
 - Team
 
 ## Usage
-You can start using this website by running "node server.js" locally then open local host with port 3000 on browser, or "heroku open" to run the production version on heroku website.
+You can start using this website by running "npm start because we use nodemon" locally then open local host with port 3000 on browser, or "heroku open" to run the production version on heroku website.
 
 ## Requirements:
 Angular
-mongodb
+mongo ORM(mongoose)
 NodeJS
 Express
 Bootstrap
@@ -32,3 +32,4 @@ install node package manager "npm" tool.
 
 ## Team
 Team Members: Ahmad Al Maradni , Sahar Al Shurafat , Ahmad shamasneh , Muhammad Enjari
+lagacy group to improve project and add feature : Dua'a Maloalain, Moamar , Kamal, Marwa 

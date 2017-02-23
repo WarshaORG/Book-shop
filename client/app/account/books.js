@@ -23,9 +23,8 @@ angular.module('addbook' , [])
   // function show book for user and admin
   $scope.showBook = function () {
   	book.showbook($scope.book).then(function(data) {
-		$scope.book = data;
-	});
+		  $scope.book = data;
+	  });
   }
-
-  });
+});
 

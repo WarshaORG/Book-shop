@@ -6,24 +6,19 @@
   </div>
     <div class="panel-body">
       <div class="row">
-      <div ng-repeat="books in book">
+      <div ng-repeat="books in book| filter:search">
         <div class="col-md-6">
          <div class="col-md-6">
         <img class="thumbnail" src="{{books.image_url}}" style="width: 180px;height: 280px">
         </div>
         <div class="col-md-6">
           <h2 style="font-weight: bold;">{{books.title}}</h2>
-          <p><span style="color: #380001">by : </span> {{books.author}}</p>
-          <p><span style="color: #380001">genre : </span>{{books.genre}}</p>
-          <p><span style="color: #380001"> publisher : </span>{{books.publisher}}</p>
-          <p><span style="color: #380001">pages : </span>{{books.pages}}</p>
-          <p><span style="color: #380001"  > download : </span><a href="{{books.download_url}}">click here to download </a></p>
-          <p style="color:#380001">simple description :</p>
-          <p>{{books.description}}</p>
+          <p><span style="color: #380001">category : </span>{{books.category}}</p>
+          <p><span style="color: #380001"  > download : </span><a href="{{books.download_url}}">click here to read or download </a></p>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
+</div >
 
