@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 
 ////////////////////// Connect to Mongoose ///////////////////////////////
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/bookstore');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://book:123@ds161209.mlab.com:61209/bookstoredb');
 var db = mongoose.connection;
 
 app.get('/api/orders',handlers.handelOrder.showorder);

@@ -5,7 +5,7 @@ angular.module('book.Order1' , [])
   $scope.order = {};
 
   // function add order just for admin 
-  $scope.addorder = function () {
+  $scope.addOrder = function () {
     Order.addorder($scope.order)
     .then(function (order) {
       $scope.order=order
@@ -18,7 +18,7 @@ angular.module('book.Order1' , [])
   }
 
   // function show order for user and admin
-  $scope.showorder = function () {
+  $scope.showOrder = function () {
     Order.showorder($scope.order).then(function(data) {
       console.log(data)
       $scope.order = data;
