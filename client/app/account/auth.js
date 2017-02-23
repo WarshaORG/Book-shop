@@ -1,6 +1,6 @@
 angular.module('book.auth', [])
 
-.controller('AuthController', function ($scope , $window , $location , Auth) {
+.controller('AuthController', function ($scope , $window , $location , Auth,$route) {
   $scope.user = {};
      if($window.localStorage.getItem("com.book")) {
         $location.path('/');
@@ -24,6 +24,7 @@ angular.module('book.auth', [])
 
          if(data.user.type === 'admin'){
              $location.path('/books/add');
+             $route.reload();
          }else {
               $location.path('/');
          }
@@ -52,6 +53,7 @@ angular.module('book.auth', [])
         $window.localStorage.setItem('com.book', token);
         $window.localStorage.setItem('user.book', $scope.user.username);
         $location.path('/');
+        $route.reload();
       })
       .catch(function (error) {
         console.error(error);
@@ -80,6 +82,7 @@ angular.module('book.auth', [])
 
 $scope.signout = function(){
   Auth.signout();
+  $route.reload();
 }
 
 

@@ -23,7 +23,31 @@ angular.module('book.services', [])
 		});
 	};
 
+   var deleteBook = function (book) {
+    return $http({
+      method: 'DELETE',
+      url: '/api/books/'+book._id
+      // data: book._id 
+    }).then(function (res) {
+      return res;
+    });
+  };
+
+   var updateBook = function (book) {
+    //var id = $routeParams.id;
+    return $http({
+      method: 'PUT',
+      url: '/api/books/'+book._id,
+      data: book 
+    }).then(function (res) {
+      return res;
+    });
+  };
+
 	return {
+    updBook:{},
+    updateBook:updateBook,
+    deleteBook:deleteBook,
 		showbook: showbook,
 		addbook: addbook
 	};

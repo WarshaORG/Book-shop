@@ -1,7 +1,7 @@
 angular.module('book.Order1' , [])
 
 
-.controller('OrderController', function ($scope , $window , $location , Order) {
+.controller('OrderController', function ($scope , $window , $location,$route , Order) {
   $scope.order = {};
 
 
@@ -17,6 +17,8 @@ angular.module('book.Order1' , [])
       $scope.order=order
       console.log(order)
         $location.path('/orders');
+        $route.reload();
+
       })
       .catch(function (error) {
         console.log(error);
@@ -28,7 +30,7 @@ angular.module('book.Order1' , [])
     Order.showorder($scope.order).then(function(data) {
       console.log(data)
     $scope.order = data;
-    $scope.apply()
+    //route.reload();
   });
   }
 //$scope.showorder();

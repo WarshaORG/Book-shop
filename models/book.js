@@ -53,3 +53,26 @@ module.exports.addBook = (book, callback) => {
 	Book.create(book, callback);
 }
 
+// delete book
+module.exports.removeBook = (id, callback) => {
+	var query = {_id:id}
+	Book.remove(query, callback);
+}
+
+
+//update book
+module.exports.updateBook = (id,book,option,callback) => {
+	var query= {_id : id};
+	var update = {
+		title : book.title,
+		genre : book.genre,
+		description : book.description,
+		author : book.author,
+		publisher : book.publisher,
+		pages : book.pages,
+		image_url : book.image_url,
+		user_id : book.user_id,
+		create_date : book.create_date
+	}
+	Book.findOneAndUpdate(query,update,option,callback)
+}

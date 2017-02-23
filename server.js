@@ -6,6 +6,7 @@ var session = require('express-session');
 var app = express();
 var handlers = require('./handlers.js')
 var Book = require('./models/book');
+
 //////////////////////////////middleware//////////////////////////////////
 app.use(express.static(__dirname + '/client'));
 app.use(bodyParser.json());
@@ -16,6 +17,10 @@ var db = mongoose.connection;
 app.get('/api/orders',handlers.handelOrder.showorder);
 app.post('/api/orders',handlers.handelOrder.addorder); 
 app.get('/api/books',handlers.handelBook.showbook);
+
+app.put('/api/books/:_id',handlers.handelBook.updatebook);
+app.delete('/api/books/:_id',handlers.handelBook.removebook);
+
 app.post('/api/books',handlers.handelBook.addbook);
 app.post('/api/users/signup', handlers.handleUsers.signup);
 app.post('/api/users/signin', handlers.handleUsers.signin);

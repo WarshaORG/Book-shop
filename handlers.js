@@ -99,7 +99,29 @@ module.exports.handelBook = {
 			}
 			res.json(book);
 		});
-	}
+	},
+
+  removebook : function(req, res)  {
+    var id = req.params._id;
+    //var book = req.body;
+    Book.removeBook(id,function (err, book) {
+      if(err){
+        throw err;
+      }
+      res.json(book);
+    });
+  },
+
+  updatebook : function(req, res)  {
+    var id = req.params._id;
+    var book = req.body;
+    Book.updateBook(id,book,{},function (err, book) {
+      if(err){
+        throw err;
+      }
+      res.json(book);
+    });
+  }
 
 }
 

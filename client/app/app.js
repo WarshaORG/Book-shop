@@ -33,6 +33,10 @@ angular.module('books',
     templateUrl: 'app/account/add_book.html',
     controller:'BookController'
   })
+  .when('/books/edit',{
+    templateUrl: 'app/account/edit_book.html',
+    controller:'BookController'
+  })
   .when('/orders',{
     templateUrl:'app/account/Orders.html',
     controller:'OrderController'
