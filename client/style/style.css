@@ -20,11 +20,17 @@ html, body{
 	text-align:center;
 }
 
-#map-canvas{
-	position:center;
-	height: 400px;
-	width: 700px;
+#map-n{
+  margin-left: 218;
+  position:center;
+  height: 400px;
+  width: 700px;
 }
+/*#map-canvas{
+  position:center;
+  height: 400px;
+  width: 700px;
+}*/
 
 .logo {
 	width: 250;
@@ -47,9 +53,7 @@ footer div{
   background-color: #B88B29;
   color: #B88B29
 }
-#map{
-	padding: 15 0 0 50
-}
+
 /*login*/
 @media (min-width: 768px) {
 

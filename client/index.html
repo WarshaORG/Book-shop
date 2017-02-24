@@ -4,7 +4,6 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:600'>
 	<script src ="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbzxz8MTo6G_tIkvrgqf3dfyFoqpshIwA&callback=initMap"></script> -->
     <link rel="icon" type="image/png" href="app/main/img/favicon-32x32.png" sizes="32x32" />
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="stylesheet" type="text/css" href="style/bootstrap/css/bootstrap.min.css"/>
@@ -64,7 +63,6 @@
 		</div>
 	</div>
 	<ng-view></ng-view>
-	
 	<footer class="container-fluid bg-4 text-center">
 		<div>2017</div>
 		<br>
@@ -85,20 +83,10 @@
 	<script src="app/main/main.js"></script>
 	<script src="app/services.js"></script>
 	<script src="app/app.js"></script>
+	
 </body>
 </html>
-<script type="text/javascript"> 
-function initialize() { 
-    var mapProp = { 
-        center: new google.maps.LatLng(38.963745, 35.243322), 
-        zoom: 5, 
-        mapTypeId: google.maps.MapTypeId.ROADMAP 
-    }; 
-    var map = new google.maps.Map(document.getElementById("map"), mapProp);
-} 
 
-google.maps.event.addDomListener(window, 'load', initialize); 
-</script>
 
 <script type="text/javascript">
 		if(localStorage.getItem('user.book')){
