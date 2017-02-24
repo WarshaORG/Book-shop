@@ -26,11 +26,12 @@ html, body{
   height: 400px;
   width: 700px;
 }
-/*#map-canvas{
+#map-canvas{
+  margin-left: 218;
   position:center;
   height: 400px;
   width: 700px;
-}*/
+}
 
 .logo {
 	width: 250;
