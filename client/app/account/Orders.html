@@ -1,16 +1,23 @@
 <div ng-init="showorder()">
-  <div>
-  	<form >
+ 
+  <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="write the book" ng-model="order.text">
+        </div>
+        <button type="submit"  class="btn  btn-default" ng-click="addorder()">Order your book</button>
+      </form>
+
+  	<!-- <form >
   		<TEXTAREA type ="text" ng-model="order.text"></TEXTAREA>
   		<button ng-click="addorder()">SUBMIT</button>
-  	</form>
-  </div>
+  	</form> -->
+ 
 
+</div>
   <ul ng-repeat="ord in order.data">
     
-    <li>{{ord.text}}</li>
+    <li>your order: {{ord.text}}</li>
 
   </ul>
  
-</div>
 <!-- ng-controller="OrderController" -->
