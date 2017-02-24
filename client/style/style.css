@@ -43,6 +43,10 @@ footer {
 	background-color: #7B003A;
 	color: #fff
 }
+footer div{
+  background-color: #B88B29;
+  color: #B88B29
+}
 #map{
 	padding: 15 0 0 50
 }
@@ -114,3 +118,8 @@ footer {
 #custom-bootstrap-menu{
 	margin-bottom: 0
 }
+
+.orderlist{
+  color: #7B003A
+}
+

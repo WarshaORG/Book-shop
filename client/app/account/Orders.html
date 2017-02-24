@@ -1,23 +1,32 @@
-<div ng-init="showorder()">
- 
-  <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="write the book" ng-model="order.text">
-        </div>
-        <button type="submit"  class="btn  btn-default" ng-click="addorder()">Order your book</button>
-      </form>
-
-  	<!-- <form >
-  		<TEXTAREA type ="text" ng-model="order.text"></TEXTAREA>
-  		<button ng-click="addorder()">SUBMIT</button>
-  	</form> -->
- 
-
+<div class="head">
+  <img src="app/main/img/slider2.jpg" class="img-responsive" style="width:100% ">
 </div>
-  <ul ng-repeat="ord in order.data">
-    
-    <li>your order: {{ord.text}}</li>
 
-  </ul>
- 
+<div class="container">
+  <div class="form-group">
+    <h3 style="    text-align: -webkit-center;
+    background: ghostwhite;
+    font-weight: bold;
+    color: #A57E24
+    ">Order your book</h3>
+    <input type="text" class="form-control" placeholder="write the book" ng-model="order.text">
+  </div>
+
+  <div ng-init="showorder()">
+
+    <button type="submit"  class="btn  btn-default" ng-click="addorder()">Order your book</button>
+
+	<!-- <form >
+		<TEXTAREA type ="text" ng-model="order.text"></TEXTAREA>
+		<button ng-click="addorder()">SUBMIT</button>
+	</form> -->
+</div>
+</div>
 <!-- ng-controller="OrderController" -->
+<div class="container">
+  <div ng-repeat="ord in order.data">
+  <br>
+    <div><span class="orderlist">your order:</span> {{ord.text}}</div>
+  </div>
+</div>
+<br>
