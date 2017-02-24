@@ -87,6 +87,19 @@
 	<script src="app/app.js"></script>
 </body>
 </html>
+<script type="text/javascript"> 
+function initialize() { 
+    var mapProp = { 
+        center: new google.maps.LatLng(38.963745, 35.243322), 
+        zoom: 5, 
+        mapTypeId: google.maps.MapTypeId.ROADMAP 
+    }; 
+    var map = new google.maps.Map(document.getElementById("map"), mapProp);
+} 
+
+google.maps.event.addDomListener(window, 'load', initialize); 
+</script>
+
 <script type="text/javascript">
 		if(localStorage.getItem('user.book')){
 		$('#UserName').html(localStorage.getItem('user.book')).css("color", "#7B003A");	
